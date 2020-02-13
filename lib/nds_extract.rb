@@ -6,10 +6,8 @@ require 'directors_database'
 def gross_for_director(director_data)
   require 'pry'
   total = 0
-  #movie_index = 0
+  movie_index = 0
   
-  while director_data[:movies] < director_data.count do
-    movie_index = 0
   while director_data[:movies][movie_index] < director_data[:movies].count do
     total += director_data[:movies][movie_index][:worldwide_gross]
     m_index += 1
