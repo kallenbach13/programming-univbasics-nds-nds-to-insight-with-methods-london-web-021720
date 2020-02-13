@@ -6,13 +6,15 @@ require 'directors_database'
 def gross_for_director(director_data)
   require 'pry'
   total = 0
-  movie_index = 0
-  #binding.pry
-  while director_data[:movies][movie_index] < director_data[:movies].count do
-  total += director_data[:movies][:worldwide_gross]
-  movie_index += 1
-end
-total
+  
+  while director_data[:movies] < director_data.count do
+    m_index = 0
+  while director_data[:movies][m_index] < director_data.count do
+    total += director_data[:movies][m_index][:worldwide_gross]
+    m_index += 1
+  end
+ end
+ total
 end
 
 # Write a method that, given an NDS creates a new Hash
